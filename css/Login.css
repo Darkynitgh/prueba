@@ -1,0 +1,240 @@
+:root {
+    --primary-color: #ff3a3a;
+    --secondary-color: #d8e2f5af;
+    --text-color: #333;
+    --light-color: #f8f9fa;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow-x: hidden;
+    color: var(--text-color);
+    min-height: 100vh;
+}
+
+.login-container {
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+}
+
+/* Secci�n de imagen (solo visible en escritorio) */
+.image-section {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background-image: url('https://images.unsplash.com/photo-1521737711867-e3b97375f902?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
+}
+
+/* Secci�n de color (solo visible en escritorio) */
+.color-section {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    z-index: 2;
+}
+
+#particles-js {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 3;
+}
+
+/* Logo (visible en ambas versiones) */
+.logo-container {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 10;
+}
+
+.logo {
+    height: 60px;
+    width: auto;
+    filter: drop-shadow(0 2px 5px rgba(0,0,0,0.2));
+}
+
+/* Formulario (visible en ambas versiones) */
+.login-form-container {
+    position: absolute;
+    top: 50%;
+    right: 10%;
+    transform: translateY(-50%);
+    width: 400px;
+    z-index: 15;
+}
+
+.login-card {
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    padding: 2.5rem;
+}
+
+.login-title {
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+.login-subtitle {
+    color: #6c757d;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.form-control {
+    padding: 0.75rem 1rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    transition: all 0.3s;
+    width: 100%;
+}
+
+    .form-control:focus {
+        border-color: var(--secondary-color);
+        box-shadow: 0 0 0 3px rgba(110, 157, 228, 0.2);
+    }
+
+.btn-login {
+    background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+    border: none;
+    color: white;
+    padding: 0.75rem;
+    font-weight: 600;
+    border-radius: 8px;
+    transition: all 0.3s;
+    width: 100%;
+}
+
+    .btn-login:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+    }
+
+/* Copyright (visible en ambas versiones) */
+.copyright {
+    position: absolute;
+    bottom: 15px;
+    right: 20px;
+    text-align: right;
+    color: white;
+    font-size: 0.85rem;
+    z-index: 10;
+}
+
+.alert-danger {
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+    color: #721c24;
+    padding: 0.75rem 1.25rem;
+    border-radius: 0.25rem;
+    margin-top: 1rem;
+}
+
+/* Estilos para inputs con iconos */
+.input-with-icon {
+    position: relative;
+}
+
+.input-icon {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #6c757d;
+    z-index: 5;
+}
+
+.input-with-icon .form-control {
+    padding-left: 45px;
+}
+
+    /* Ajuste para focus en inputs con iconos */
+    .input-with-icon .form-control:focus + .input-icon {
+        color: var(--secondary-color);
+    }
+
+/* Media queries para responsividad - M�VIL */
+@media (max-width: 767px) {
+    .image-section {
+        width: 100%;
+        background-image: url('https://images.unsplash.com/photo-1521737711867-e3b97375f902?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');
+    }
+
+    .color-section {
+        display: none;
+    }
+
+    .login-form-container {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        right: auto;
+        transform: translate(-50%, -50%);
+        width: 85%;
+        max-width: 400px;
+    }
+
+    .login-card {
+        background: rgba(255, 255, 255, 0.95);
+        padding: 2rem;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    .logo {
+        height: 50px;
+        filter: drop-shadow(0 2px 5px rgba(0,0,0,0.4));
+    }
+
+    .logo-container {
+        right: 15px;
+        top: 15px;
+    }
+
+    .copyright {
+        color: #333;
+        bottom: 20px;
+        right: 50%;
+        transform: translateX(50%);
+        text-align: center;
+        font-weight: 500;
+        text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
+    }
+}
+
+@media (max-width: 480px) {
+    .login-card {
+        padding: 1.5rem;
+    }
+
+    .login-form-container {
+        width: 90%;
+    }
+
+    .logo {
+        height: 40px;
+    }
+
+    .copyright {
+        font-size: 0.75rem;
+    }
+}
