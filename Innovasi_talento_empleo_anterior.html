@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Empleo Anterior</title>
+</head>
+<body>
+<h2>Empleos Anteriores</h2>
+<table border="1" cellpadding="5" cellspacing="0">
+    <thead>
+        <tr>
+            <th>Puesto</th>
+            <th>Empresa</th>
+            <th>Periodo</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Ejemplo Puesto</td>
+            <td>Ejemplo Empresa</td>
+            <td>01/2022 - 12/2023</td>
+            <td>
+                <button onclick="document.getElementById('modalEmpleoAnterior').style.display='block'">Editar</button>
+            </td>
+        </tr>
+        <!-- Más filas aquí -->
+    </tbody>
+</table>
+
+<!-- Modal -->
+<div id="modalEmpleoAnterior" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.2);">
+    <div style="background:#fff; margin:40px auto; padding:20px; width:90%; max-width:600px; position:relative;">
+        <form>
+            <h3>Empleo Anterior</h3>
+            <label>Puesto<br>
+                <input type="text" id="puesto" required>
+            </label><br><br>
+            <label>Empresa<br>
+                <input type="text" id="empresa" required>
+            </label><br><br>
+            <label>Actividades<br>
+                <select id="actividades">
+                    <option value="">Ventas</option>
+                    <option value="">Administración</option>
+                    <option value="">Producción</option>
+                    <option value="">Atención al cliente</option>
+                    <option value="">Otro</option>
+                </select>
+               
+            </label><br><br>
+            <label>Motivo de Separación<br>
+               <textarea id="Motivodeseparacion" rows="2"></textarea>
+            </label><br><br>
+            <label>Jefe Directo<br>
+                <input type="text" id="jefeDirecto">
+            </label><br><br>
+            <label>Puesto Jefe Directo<br>
+                <input type="text" id="puestoJefeDirecto">
+            </label><br><br>
+            <label>Teléfono Jefe Directo<br>
+                <input type="tel" id="telefonoJefe">
+            </label><br><br>
+            <label>Sueldo Neto Final<br>
+                <input type="number" id="sueldoFinal">
+            </label><br><br>
+            <label>Inicio (calendario y año)<br>
+                <input type="month" id="periodoInicio">
+            </label><br>
+            <label>Inicio (año)<br>
+                <input type="number" id="periodoInicioAno" min="1900" max="2100" step="1">
+            </label><br>
+            </label><br>
+                <input type="month" id="periodoFin">
+            </label><br>
+             <label>Fin (año)<br>
+                <input type="number" id="periodoFinAno" min="1900" max="2100" step="1">
+            </label><br><br>
+            <label>¿Podemos solicitar informes?<br>
+                <input type="radio" name="solicitarInformes" id="informesSi" value="si">
+                <label for="informesSi">Sí</label>
+                <input type="radio" name="solicitarInformes" id="informesNo" value="no">
+                <label for="informesNo">No</label>
+            </label><br><br>
+            <label>Razones<br>
+                <textarea id="razonesInformes" rows="2"></textarea>
+            </label><br><br>
+            <button type="submit">Guardar</button>
+            <button type="button" onclick="document.getElementById('modalEmpleoAnterior').style.display='none'">Cancelar</button>
+        </form>
+    </div>
+</div>
+</body>
+</html>
