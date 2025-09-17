@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Innovasi - Talento</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/principal.css">
+    <link rel="stylesheet" href="../css/modales.css">
+</head>
+<body>
+    <!-- Header con Navbar de Bootstrap -->
+    <header class="navbar navbar-expand-lg navbar-dark bg-primary-gradient">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="../Img/intelimatica-logo.png" alt="Logo Empresa" height="80" class="d-inline-block align-text-top me-2">
+                <span class="brand-text">Innovasi</span>
+            </a>
+            
+            <h2 class="navbar-text mx-auto mb-0 d-none d-lg-block">Sistema de Gestión de Talento</h2>
+            
+            <div class="dropdown ms-auto">
+                <button class="btn btn-user dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                    <div class="user-avatar">
+                        <i class="fas fa-user-circle me-2"></i>
+                    </div>
+                    <div class="user-info">
+                        <span id="nombreUsuario" class="user-name">Usuario</span>
+                        <small class="user-role">Administrador</small>
+                    </div>
+                </button>
+                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
+                    <li><a class="dropdown-item" href="#"><i class="fas fa-user me-2"></i>Mi perfil</a></li>
+                    <li><a class="dropdown-item" href="#"><i class="fas fa-cog me-2"></i>Configuración</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="#" onclick="cerrarSesion()"><i class="fas fa-sign-out-alt me-2"></i>Cerrar sesión</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Sidebar con navegación -->
+            <nav class="col-md-3 col-lg-2 d-md-block sidebar collapse">
+                <div class="position-sticky pt-3">
+                    <div class="sidebar-header">
+                        <h6 class="text-uppercase sidebar-title">Navegación principal</h6>
+                    </div>
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#">
+                                <i class="fas fa-building me-2"></i>
+                                Empresa
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-bs-toggle="collapse" href="#candidatoSubmenu" role="button" aria-expanded="false" aria-controls="candidatoSubmenu">
+                                <i class="fas fa-users me-2"></i>
+                                Candidato
+                                <i class="fas fa-chevron-down float-end"></i>
+                            </a>
+                            <div class="collapse submenu" id="candidatoSubmenu">
+                                <ul class="nav flex-column">
+                                    <li class="nav-item">
+                                        <a class="nav-link" data-bs-toggle="collapse" href="#nuevoCandidatoSubmenu" role="button" aria-expanded="false" aria-controls="nuevoCandidatoSubmenu">
+                                            <i class="fas fa-plus-circle me-2"></i>
+                                            Nuevo
+                                            <i class="fas fa-chevron-down float-end"></i>
+                                        </a>
+                                        <div class="collapse submenu" id="nuevoCandidatoSubmenu">
+                                            <ul class="nav flex-column">
+                                                <li class="nav-item">
+                                                    <button class="nav-link text-start btn btn-link" onclick="abrirModal('modalNuevoCandidato')">
+                                                        <i class="fas fa-user-plus me-2"></i>
+                                                        Registrar nuevo candidato
+                                                    </button>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="Innovasi_talento_seguimiento.html">
+                                                        <i class="fas fa-clipboard-check me-2"></i>
+                                                        Seguimiento
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" data-bs-toggle="collapse" href="#empleoAnteriorSubmenu" role="button" aria-expanded="false" aria-controls="empleoAnteriorSubmenu">
+                                            <i class="fas fa-briefcase me-2"></i>
+                                            Empleo anterior
+                                            <i class="fas fa-chevron-down float-end"></i>
+                                        </a>
+                                        <div class="collapse submenu" id="empleoAnteriorSubmenu">
+                                            <ul class="nav flex-column">
+                                                <li class="nav-item">
+                                                    <button class="nav-link text-start btn btn-link" onclick="abrirModal('modalEmpleoAnterior')">
+                                                        <i class="fas fa-file-alt me-2"></i>
+                                                        Registrar empleo
+                                                    </button>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="innovasi_talento_empleo_anterior.html">
+                                                        <i class="fas fa-history me-2"></i>
+                                                        Ver historial
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <i class="fas fa-chart-line me-2"></i>
+                                Reportes
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <i class="fas fa-bell me-2"></i>
+                                Notificaciones
+                                <span class="badge bg-danger rounded-pill float-end">3</span>
+                            </a>
+                        </li>
+                    </ul>
+                    
+                    <div class="sidebar-footer mt-auto p-3">
+                        <div class="subscription-status">
+                            <h6 class="text-uppercase">Estado de suscripción</h6>
+                            <div class="progress mb-2">
+                                <div class="progress-bar bg-success" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                            <p class="mb-0 small">Activo hasta: 15/12/2023</p>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- Contenido principal -->
+            <main class="col-md-9 col-lg-10 ms-sm-auto px-4 main-content">
+                <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                    <h1 class="h2">Dashboard</h1>
+                    <div class="btn-toolbar mb-2 mb-md-0">
+                        <div class="btn-group me-2">
+                            <button type="button" class="btn btn-sm btn-outline-secondary">Compartir</button>
+                            <button type="button" class="btn btn-sm btn-outline-secondary">Exportar</button>
+                        </div>
+                        <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
+                            <i class="fas fa-calendar me-1"></i>
+                            Esta semana
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Cards de estadísticas -->
+                <div class="row mb-4">
+                    <div class="col-xl-3 col-md-6 mb-4">
+                        <div class="card border-left-primary h-100 py-2">
+                            <div class="card-body">
+                                <div class="row no-gutters align-items-center">
+                                    <div class="col mr-2">
+                                        <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Candidatos registrados</div>
+                                        <div class="h5 mb-0 font-weight-bold text-gray-800">124</div>
+                                    </div>
+                                    <div class="col-auto">
+                                        <i class="fas fa-users fa-2x text-gray-300"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-3 col-md-6 mb-4">
+                        <div class="card border-left-success h-100 py-2">
+                            <div class="card-body">
+                                <div class="row no-gutters align-items-center">
+                                    <div class="col mr-2">
+                                        <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Procesos activos</div>
+                                        <div class="h5 mb-0 font-weight-bold text-gray-800">18</div>
+                                    </div>
+                                    <div class="col-auto">
+                                        <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-3 col-md-6 mb-4">
+                        <div class="card border-left-info h-100 py-2">
+                            <div class="card-body">
+                                <div class="row no-gutters align-items-center">
+                                    <div class="col mr-2">
+                                        <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Tareas pendientes</div>
+                                        <div class="h5 mb-0 font-weight-bold text-gray-800">7</div>
+                                    </div>
+                                    <div class="col-auto">
+                                        <i class="fas fa-tasks fa-2x text-gray-300"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-3 col-md-6 mb-4">
+                        <div class="card border-left-warning h-100 py-2">
+                            <div class="card-body">
+                                <div class="row no-gutters align-items-center">
+                                    <div class="col mr-2">
+                                        <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Reuniones hoy</div>
+                                        <div class="h5 mb-0 font-weight-bold text-gray-800">2</div>
+                                    </div>
+                                    <div class="col-auto">
+                                        <i class="fas fa-calendar-day fa-2x text-gray-300"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-8 mb-4">
+                        <div class="card shadow mb-4">
+                            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                <h6 class="m-0 font-weight-bold text-primary">Procesos de reclutamiento</h6>
+                                <div class="dropdown no-arrow">
+                                    <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                                        <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+                                    </a>
+                                    <ul class="dropdown-menu dropdown-menu-end shadow animated--fade-in" aria-labelledby="dropdownMenuLink">
+                                        <li><a class="dropdown-item" href="#">Acción</a></li>
+                                        <li><a class="dropdown-item" href="#">Otra acción</a></li>
+                                        <li><hr class="dropdown-divider"></li>
+                                        <li><a class="dropdown-item" href="#">Algo más</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="chart-pie pt-4 pb-2">
+                                    <canvas id="myPieChart"></canvas>
+                                </div>
+                                <div class="mt-4 text-center small">
+                                    <span class="mr-2">
+                                        <i class="fas fa-circle text-primary"></i> Inicial
+                                    </span>
+                                    <span class="mr-2">
+                                        <i class="fas fa-circle text-success"></i> Entrevista
+                                    </span>
+                                    <span class="mr-2">
+                                        <i class="fas fa-circle text-info"></i> Pruebas
+                                    </span>
+                                    <span class="mr-2">
+                                        <i class="fas fa-circle text-warning"></i> Final
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 mb-4">
+                        <div class="card shadow mb-4">
+                            <div class="card-header py-3">
+                                <h6 class="m-0 font-weight-bold text-primary">Actividad reciente</h6>
+                            </div>
+                            <div class="card-body">
+                                <div class="activity-feed">
+                                    <div class="feed-item">
+                                        <div class="feed-icon bg-primary">
+                                            <i class="fas fa-user-plus"></i>
+                                        </div>
+                                        <div class="feed-content">
+                                            <span class="feed-user">Nuevo candidato registrado</span>
+                                            <span class="feed-time">Hace 10 min</span>
+                                        </div>
+                                    </div>
+                                    <div class="feed-item">
+                                        <div class="feed-icon bg-success">
+                                            <i class="fas fa-check-circle"></i>
+                                        </div>
+                                        <div class="feed-content">
+                                            <span class="feed-user">Proceso completado</span>
+                                            <span class="feed-time">Hace 1 hora</span>
+                                        </div>
+                                    </div>
+                                    <div class="feed-item">
+                                        <div class="feed-icon bg-info">
+                                            <i class="fas fa-calendar-check"></i>
+                                        </div>
+                                        <div class="feed-content">
+                                            <span class="feed-user">Nueva entrevista programada</span>
+                                            <span class="feed-time">Ayer a las 14:30</span>
+                                        </div>
+                                    </div>
+                                    <div class="feed-item">
+                                        <div class="feed-icon bg-warning">
+                                            <i class="fas fa-exclamation-triangle"></i>
+                                        </div>
+                                        <div class="feed-content">
+                                            <span class="feed-user">Tarea pendiente por revisar</span>
+                                            <span class="feed-time">15 Sep 2023</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS y Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <!-- Tu script original (sin cambios) -->
+    <script src="../js/app.js"></script>
+    
+    <!-- Script para gráficos -->
+    <script>
+        // Gráfico de ejemplo
+        document.addEventListener('DOMContentLoaded', function() {
+            var ctx = document.getElementById("myPieChart");
+            if (ctx) {
+                var myPieChart = new Chart(ctx, {
+                    type: 'doughnut',
+                    data: {
+                        labels: ["Inicial", "Entrevista", "Pruebas", "Final"],
+                        datasets: [{
+                            data: [35, 25, 20, 20],
+                            backgroundColor: ['#4e73df', '#1cc88a', '#36b9cc', '#f6c23e'],
+                            hoverBackgroundColor: ['#2e59d9', '#17a673', '#2c9faf', '#dda20a'],
+                            hoverBorderColor: "rgba(234, 236, 244, 1)",
+                        }],
+                    },
+                    options: {
+                        maintainAspectRatio: false,
+                        tooltips: {
+                            backgroundColor: "rgb(255,255,255)",
+                            bodyFontColor: "#858796",
+                            borderColor: '#dddfeb',
+                            borderWidth: 1,
+                            xPadding: 15,
+                            yPadding: 15,
+                            displayColors: false,
+                            caretPadding: 10,
+                        },
+                        legend: {
+                            display: false
+                        },
+                        cutoutPercentage: 80,
+                    },
+                });
+            }
+        });
+    </script>
+</body>
+</html>

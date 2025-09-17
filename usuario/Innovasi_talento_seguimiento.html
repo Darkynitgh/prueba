@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Innovasi - Talento</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/principal.css">
+        <link rel="stylesheet" href="../css/modales.css">
+    
+</head>
+<body>
+    <!-- Header con Navbar de Bootstrap -->
+    <header class="navbar navbar-expand-lg navbar-dark bg-primary-gradient">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="Img/intelimatica-logo.png" alt="Logo Empresa" height="40" class="d-inline-block align-text-top me-2">
+                <span class="brand-text">Innovasi</span>
+            </a>
+            
+            <h2 class="navbar-text mx-auto mb-0 d-none d-lg-block">Sistema de Gestión de Talento</h2>
+            
+            <div class="dropdown ms-auto">
+                <button class="btn btn-user dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                    <div class="user-avatar">
+                        <i class="fas fa-user-circle me-2"></i>
+                    </div>
+                    <div class="user-info">
+                        <span id="nombreUsuario" class="user-name">Usuario</span>
+                        <small class="user-role">Administrador</small>
+                    </div>
+                </button>
+                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
+                    <li><a class="dropdown-item" href="#"><i class="fas fa-user me-2"></i>Mi perfil</a></li>
+                    <li><a class="dropdown-item" href="#"><i class="fas fa-cog me-2"></i>Configuración</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="#" onclick="cerrarSesion()"><i class="fas fa-sign-out-alt me-2"></i>Cerrar sesión</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Sidebar con navegación -->
+            <nav class="col-md-3 col-lg-2 d-md-block sidebar collapse">
+                <div class="position-sticky pt-3">
+                    <div class="sidebar-header">
+                        <h6 class="text-uppercase sidebar-title">Navegación principal</h6>
+                    </div>
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <i class="fas fa-building me-2"></i>
+                                Empresa
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-bs-toggle="collapse" href="#candidatoSubmenu" role="button" aria-expanded="false" aria-controls="candidatoSubmenu">
+                                <i class="fas fa-users me-2"></i>
+                                Candidato
+                                <i class="fas fa-chevron-down float-end"></i>
+                            </a>
+                            <div class="collapse show submenu" id="candidatoSubmenu">
+                                <ul class="nav flex-column">
+                                    <li class="nav-item">
+                                        <a class="nav-link active" data-bs-toggle="collapse" href="#nuevoCandidatoSubmenu" role="button" aria-expanded="false" aria-controls="nuevoCandidatoSubmenu">
+                                            <i class="fas fa-plus-circle me-2"></i>
+                                            Nuevo
+                                            <i class="fas fa-chevron-down float-end"></i>
+                                        </a>
+                                        <div class="collapse show submenu" id="nuevoCandidatoSubmenu">
+                                            <ul class="nav flex-column">
+                                                <li class="nav-item">
+                                                    <button class="nav-link text-start btn btn-link" onclick="abrirModal('modalNuevoCandidato')">
+                                                        <i class="fas fa-user-plus me-2"></i>
+                                                        Registrar nuevo candidato
+                                                    </button>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link active" href="Innovasi_talento_seguimiento.html">
+                                                        <i class="fas fa-clipboard-check me-2"></i>
+                                                        Seguimiento
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" data-bs-toggle="collapse" href="#empleoAnteriorSubmenu" role="button" aria-expanded="false" aria-controls="empleoAnteriorSubmenu">
+                                            <i class="fas fa-briefcase me-2"></i>
+                                            Empleo anterior
+                                            <i class="fas fa-chevron-down float-end"></i>
+                                        </a>
+                                        <div class="collapse submenu" id="empleoAnteriorSubmenu">
+                                            <ul class="nav flex-column">
+                                                <li class="nav-item">
+                                                    <button class="nav-link text-start btn btn-link" onclick="abrirModal('modalEmpleoAnterior')">
+                                                        <i class="fas fa-file-alt me-2"></i>
+                                                        Registrar empleo
+                                                    </button>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="innovasi_talento_empleo_anterior.html">
+                                                        <i class="fas fa-history me-2"></i>
+                                                        Ver historial
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                    
+                    <div class="sidebar-footer mt-auto p-3">
+                        <div class="subscription-status">
+                            <h6 class="text-uppercase">Estado de suscripción</h6>
+                            <div class="progress mb-2">
+                                <div class="progress-bar bg-success" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                            <p class="mb-0 small">Activo hasta: 15/12/2023</p>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- Contenido principal -->
+            <main class="col-md-9 col-lg-10 ms-sm-auto px-4 main-content">
+                <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3">
+                    <h2>Seguimiento de Candidato</h2>
+                </div>
+
+                <!-- Formulario de búsqueda -->
+                <div class="search-form">
+                    <form class="row g-3">
+                        <div class="col-md-4">
+                            <label for="nombre" class="form-label">Nombre</label>
+                            <input type="text" class="form-control" id="nombre" name="nombre">
+                        </div>
+                        <div class="col-md-4">
+                            <label for="anio" class="form-label">Año</label>
+                            <input type="text" class="form-control" id="anio" name="anio">
+                        </div>
+                        <div class="col-md-4">
+                            <label for="vacante" class="form-label">Vacante</label>
+                            <select class="form-select" id="vacante" name="vacante">
+                                <option value="">Selecciona una opción</option>
+                                <option value="desarrollador">Desarrollador</option>
+                                <option value="analista">Analista</option>
+                                <option value="soporte">Soporte</option>
+                                <option value="administrativo">Administrativo</option>
+                            </select>
+                        </div>
+                        <div class="col-12">
+                            <button type="submit" class="btn btn-primary">Buscar</button>
+                            <button type="button" class="btn btn-success ms-2" onclick="abrirModal('modalNuevoCandidato')">
+                                <i class="fas fa-plus me-1"></i>Agregar
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Tabla de resultados -->
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="card-title mb-0">Resultados de búsqueda</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>Editar</th>
+                                        <th>Nombre</th>
+                                        <th>Vacante</th>
+                                        <th>Fecha Registro</th>
+                                        <th>Estatus</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <a href="#" class="btn btn-sm btn-outline-primary" onclick="abrirModal('edicionModal', this)">
+                                                <i class="fas fa-edit"></i>
+                                            </a>
+                                        </td>
+                                        <td>Juan Pérez</td>
+                                        <td>Desarrollador</td>
+                                        <td>2024-06-01</td>
+                                        <td><span class="badge bg-warning">En proceso</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <a href="#" class="btn btn-sm btn-outline-primary" onclick="abrirModal('edicionModal', this)">
+                                                <i class="fas fa-edit"></i>
+                                            </a>
+                                        </td>
+                                        <td>María López</td>
+                                        <td>Analista</td>
+                                        <td>2024-05-28</td>
+                                        <td><span class="badge bg-info">Entrevistado</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS y Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+    
+    <!-- Tu script original (sin cambios) -->
+    <script src="../js/app.js"></script>
+</body>
+</html>

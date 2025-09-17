@@ -24,7 +24,6 @@ body {
     width: 100%;
 }
 
-/* Secci�n de imagen (solo visible en escritorio) */
 .image-section {
     position: absolute;
     top: 0;
@@ -37,7 +36,6 @@ body {
     z-index: 1;
 }
 
-/* Secci�n de color (solo visible en escritorio) */
 .color-section {
     position: absolute;
     top: 0;
@@ -57,7 +55,6 @@ body {
     z-index: 3;
 }
 
-/* Logo (visible en ambas versiones) */
 .logo-container {
     position: absolute;
     top: 20px;
@@ -68,10 +65,9 @@ body {
 .logo {
     height: 60px;
     width: auto;
-    filter: drop-shadow(0 2px 5px rgba(0,0,0,0.2));
+    filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.2));
 }
 
-/* Formulario (visible en ambas versiones) */
 .login-form-container {
     position: absolute;
     top: 50%;
@@ -109,10 +105,10 @@ body {
     width: 100%;
 }
 
-    .form-control:focus {
-        border-color: var(--secondary-color);
-        box-shadow: 0 0 0 3px rgba(110, 157, 228, 0.2);
-    }
+.form-control:focus {
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 0 3px rgba(110, 157, 228, 0.2);
+}
 
 .btn-login {
     background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
@@ -125,12 +121,11 @@ body {
     width: 100%;
 }
 
-    .btn-login:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
-    }
+.btn-login:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
 
-/* Copyright (visible en ambas versiones) */
 .copyright {
     position: absolute;
     bottom: 15px;
@@ -150,7 +145,6 @@ body {
     margin-top: 1rem;
 }
 
-/* Estilos para inputs con iconos */
 .input-with-icon {
     position: relative;
 }
@@ -168,12 +162,10 @@ body {
     padding-left: 45px;
 }
 
-    /* Ajuste para focus en inputs con iconos */
-    .input-with-icon .form-control:focus + .input-icon {
-        color: var(--secondary-color);
-    }
+.input-with-icon .form-control:focus+.input-icon {
+    color: var(--secondary-color);
+}
 
-/* Media queries para responsividad - M�VIL */
 @media (max-width: 767px) {
     .image-section {
         width: 100%;
@@ -202,7 +194,7 @@ body {
 
     .logo {
         height: 50px;
-        filter: drop-shadow(0 2px 5px rgba(0,0,0,0.4));
+        filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.4));
     }
 
     .logo-container {

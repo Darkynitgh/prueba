@@ -1,0 +1,329 @@
+
+
+<!--===================================================
+//          modal de agregar candidato
+// =================================================== -->
+<div id="modalNuevoCandidato" class="modal">
+    <div class="modal-content">
+
+        <div class="modal-header">
+            <h2>Registrar nuevo candidato</h2>
+            <span class="close-btn" onclick="cerrarModal('modalNuevoCandidato')">&times;</span>
+        </div>
+
+        <div class="modal-body">
+            <form id="formNuevoCandidato" class="form-grid-2-columns">
+                <div class="form-group">
+                    <label for="nombres">Nombre(s):</label>
+                    <input type="text" id="nombres" name="nombres">
+                </div>
+                <div class="form-group">
+                    <label for="apellido_paterno">Apellido paterno:</label>
+                    <input type="text" id="apellido_paterno" name="apellido_paterno">
+                </div>
+                <div class="form-group">
+                    <label for="apellido_materno">Apellido materno:</label>
+                    <input type="text" id="apellido_materno" name="apellido_materno">
+                </div>
+                <div class="form-group">
+                    <label for="celular">Celular:</label>
+                    <input type="text" id="celular" name="celular">
+                </div>
+                <div class="form-group">
+                    <label for="telefono">Teléfono:</label>
+                    <input type="text" id="telefono" name="telefono">
+                </div>
+                <div class="form-group">
+                    <label for="correo">Correo electrónico:</label>
+                    <input type="email" id="correo" name="correo">
+                </div>
+                <div class="form-group">
+                    <label for="curp">CURP:</label>
+                    <input type="text" id="curp" name="curp">
+                </div>
+                <div class="form-group">
+                    <label for="rfc">RFC:</label>
+                    <input type="text" id="rfc" name="rfc">
+                </div>
+                <div class="form-group">
+                    <label for="vacante">Vacante:</label>
+                    <select id="vacante" name="vacante">
+                        <option value>Selecciona una opción</option>
+                        <option value="desarrollador">Desarrollador</option>
+                        <option value="analista">Analista</option>
+                        <option value="soporte">Soporte</option>
+                        <option value="administrativo">Administrativo</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Fecha de registro:</label>
+                    <span id="fechaNuevoCandidato"></span>
+                </div>
+            </form>
+        </div>
+
+        <div class="modal-footer">
+            <button type="button" class="btn btn-cancel" onclick="cerrarModal('modalNuevoCandidato')">Cerrar</button>
+            <button type="submit" form="formNuevoCandidato" class="btn btn-save">Guardar</button>
+        </div>
+
+    </div>
+</div>
+<!--===================================================
+//          modal de empleo anterior
+// =================================================== -->
+<div id="modalEmpleoAnterior" class="modal">
+    <div class="modal-content">
+
+        <div class="modal-header">
+            <h2>Registrar empleo anterior</h2>
+            <span class="close-btn" onclick="cerrarModal('modalEmpleoAnterior')">&times;</span>
+        </div>
+
+        <div class="modal-body">
+            <form id="formEmpleoAnterior" class="form-grid-2-columns">
+                <div class="form-group">
+                    <label for="puesto">Puesto:</label>
+                    <input type="text" id="puesto" name="puesto">
+                </div>
+                <div class="form-group">
+                    <label for="empresa">Empresa:</label>
+                    <input type="text" id="empresa" name="empresa">
+                </div>
+
+                <div class="form-group">
+                    <label for="jefeDirecto">Jefe directo:</label>
+                    <input type="text" id="jefeDirecto" name="jefeDirecto">
+                </div>
+                <div class="form-group">
+                    <label for="puestoJefeDirecto">Puesto jefe directo:</label>
+                    <input type="text" id="puestoJefeDirecto" name="puestoJefeDirecto">
+                </div>
+
+                <div class="form-group">
+                    <label for="telefonoJefe">Teléfono jefe directo:</label>
+                    <input type="text" id="telefonoJefe" name="telefonoJefe">
+                </div>
+                <div class="form-group">
+                    <label for="sueldoNetoFinal">Sueldo neto final:</label>
+                    <input type="text" id="sueldoNetoFinal" name="sueldoNetoFinal">
+                </div>
+
+                <div class="form-group">
+                    <label for="periodoInicio">Periodo de inicio (año):</label>
+                    <input type="number" id="periodoInicio" name="periodoInicio" min="1900" max="2100">
+                </div>
+                <div class="form-group">
+                    <label for="periodoFin">Periodo de finalización (año):</label>
+                    <input type="number" id="periodoFin" name="periodoFin" min="1900" max="2100">
+                </div>
+
+                <div class="form-group">
+                    <label for="motivoSeparacion">Motivo de separación:</label>
+                    <select id="motivoSeparacion" name="motivoSeparacion">
+                        <option value>Selecciona una opción</option>
+                        <option value="renuncia">Renuncia</option>
+                        <option value="despido">Despido</option>
+                        <option value="terminoContrato">Término de contrato</option>
+                        <option value="otros">Otros</option>
+                    </select>
+                </div>
+
+                <div class="form-group radio-group-container">
+                    <label>¿Podemos solicitar informes?</label>
+                    <div class="radio-group">
+                        <input type="radio" id="informesSi" name="informes" value="si">
+                        <label for="informesSi">Sí</label>
+                        <input type="radio" id="informesNo" name="informes" value="no">
+                        <label for="informesNo">No</label>
+                    </div>
+                </div>
+
+                <div class="form-group full-width">
+                    <label for="actividades">Actividades que realizaba:</label>
+                    <textarea id="actividades" name="actividades"></textarea>
+                </div>
+
+                <div id="razonesInformesDiv" class="form-group full-width" style="display:none;">
+                    <label for="razonesInformes">¿Por que?</label>
+                    <select id="razonesInformes" name="razonesInformes">
+                        <option value>Selecciona una opción</option>
+                        <option value="privacidad">Privacidad del candidato</option>
+                        <option value="politicaEmpresa">Política de la empresa anterior</option>
+                        <option value="confidencialidad">Confidencialidad de información</option>
+                        <option value="noAutorizado">No autorizado por el candidato</option>
+                        <option value="otros">Otros</option>
+                    </select>
+                </div>
+            </form>
+        </div>
+
+        <div class="modal-footer">
+            <button type="button" class="btn btn-cancel" onclick="cerrarModal('modalEmpleoAnterior')">Cancelar</button>
+            <button type="submit" form="formEmpleoAnterior" class="btn btn-save">Guardar</button>
+        </div>
+
+    </div>
+</div>
+<!--===================================================
+//          modal de edicion de candidato
+// =================================================== -->
+<div id="edicionModal" class="modal">
+    <div class="modal-content">
+
+        <div class="modal-header">
+            <h3>Candidato: <span id="modalNombreCandidato"></span></h3>
+            <span class="close-btn" onclick="cerrarModal('edicionModal')">&times;</span>
+        </div>
+
+        <div class="modal-body">
+            <form id="edicionForm" class="form-grid-2-columns">
+                <fieldset class="form-group full-width">
+                    <legend>Datos generales</legend>
+                    <div class="form-group-grid">
+                        <div>
+                            <label for="modalFechaNacimiento">Fecha de nacimiento:</label>
+                            <input type="date" id="modalFechaNacimiento" name="fechaNacimiento">
+                        </div>
+                        <div>
+                            <label for="modalSexo">Sexo:</label>
+                            <select id="modalSexo" name="sexo">
+                                <option value>Selecciona</option>
+                                <option value="masculino">Masculino</option>
+                                <option value="femenino">Femenino</option>
+                                <option value="otro">Otro</option>
+                            </select>
+                        </div>
+                    </div>
+                </fieldset>
+                <fieldset class="form-group full-width">
+                    <legend>Dirección</legend>
+                    <div class="form-group-grid">
+                        <div class="form-group">
+                            <label for="modalCalle">Calle:</label>
+                            <input type="text" id="modalCalle" name="calle">
+                        </div>
+                        <div class="form-group">
+                            <label for="modalNumExt">Número exterior:</label>
+                            <input type="text" id="modalNumExt" name="numExt">
+                        </div>
+                        <div class="form-group">
+                            <label for="modalNumInt">Número interior:</label>
+                            <input type="text" id="modalNumInt" name="numInt">
+                        </div>
+                        <div class="form-group">
+                            <label for="modalCP">Código postal:</label>
+                            <input type="text" id="modalCP" name="cp">
+                        </div>
+                        <div class="form-group">
+                            <label for="modalColonia">Colonia:</label>
+                            <input type="text" id="modalColonia" name="colonia">
+                        </div>
+                        <div class="form-group">
+                            <label for="modalCiudad">Ciudad:</label>
+                            <input type="text" id="modalCiudad" name="ciudad">
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+
+        <div class="modal-footer">
+            <button type="button" class="btn btn-cancel" onclick="cerrarModal('edicionModal')">Cancelar</button>
+            <button type="submit" form="edicionForm" class="btn btn-save">Guardar</button>
+        </div>
+
+    </div>
+</div>
+
+<!--===================================================
+//          modal de edicion de empleo
+// =================================================== -->
+<div id="modalEditarEmpleo" class="modal">
+    <div class="modal-content">
+
+        <div class="modal-header">
+            <h3>Editar empleo anterior de: <span id="modalEditarCandidato"></span></h3>
+            <span class="close-btn" onclick="cerrarModal('modalEditarEmpleo')">&times;</span>
+        </div>
+
+        <div class="modal-body">
+            <form id="formEditarEmpleo" class="form-grid-2-columns">
+                <div class="form-group">
+                    <label for="editarPuesto">Puesto:</label>
+                    <input type="text" id="editarPuesto" name="puesto">
+                </div>
+                <div class="form-group">
+                    <label for="editarEmpresa">Empresa:</label>
+                    <input type="text" id="editarEmpresa" name="empresa">
+                </div>
+                <div class="form-group">
+                    <label for="editarJefeDirecto">Jefe directo:</label>
+                    <input type="text" id="editarJefeDirecto" name="jefeDirecto">
+                </div>
+                <div class="form-group">
+                    <label for="editarPuestoJefeDirecto">Puesto jefe directo:</label>
+                    <input type="text" id="editarPuestoJefeDirecto" name="puestoJefeDirecto">
+                </div>
+                <div class="form-group">
+                    <label for="editarTelefonoJefe">Teléfono jefe directo:</label>
+                    <input type="text" id="editarTelefonoJefe" name="telefonoJefe">
+                </div>
+                <div class="form-group">
+                    <label for="editarSueldoNetoFinal">Sueldo neto final:</label>
+                    <input type="text" id="editarSueldoNetoFinal" name="sueldoNetoFinal">
+                </div>
+                <div class="form-group">
+                    <label for="editarPeriodoInicio">Periodo de inicio (año):</label>
+                    <input type="number" id="editarPeriodoInicio" name="periodoInicio" min="1900" max="2100">
+                </div>
+                <div class="form-group">
+                    <label for="editarPeriodoFin">Periodo de finalización (año):</label>
+                    <input type="number" id="editarPeriodoFin" name="periodoFin" min="1900" max="2100">
+                </div>
+                <div class="form-group">
+                    <label for="editarMotivoSeparacion">Motivo de separación:</label>
+                    <select id="editarMotivoSeparacion" name="motivoSeparacion">
+                        <option value>Selecciona una opción</option>
+                        <option value="renuncia">Renuncia</option>
+                        <option value="despido">Despido</option>
+                        <option value="terminoContrato">Término de contrato</option>
+                        <option value="otros">Otros</option>
+                    </select>
+                </div>
+                <div class="form-group radio-group-container">
+                    <label>¿Podemos solicitar informes?</label>
+                    <div class="radio-group">
+                        <input type="radio" id="informesSiEditar" name="informesEditar" value="si">
+                        <label for="informesSiEditar">Sí</label>
+                        <input type="radio" id="informesNoEditar" name="informesEditar" value="no">
+                        <label for="informesNoEditar">No</label>
+                    </div>
+                </div>
+
+                <div class="form-group full-width">
+                    <label for="editarActividades">Actividades que realizaba:</label>
+                    <textarea id="editarActividades" name="actividades"></textarea>
+                </div>
+                
+                <div id="razonesInformesEditarDiv" class="form-group full-width" style="display:none;">
+                    <label for="razonesInformesEditar">¿Por que?</label>
+                    <select id="razonesInformesEditar" name="razonesInformesEditar">
+                        <option value>Selecciona una opción</option>
+                        <option value="privacidad">Privacidad del candidato</option>
+                        <option value="politicaEmpresa">Política de la empresa anterior</option>
+                        <option value="confidencialidad">Confidencialidad de información</option>
+                        <option value="noAutorizado">No autorizado por el candidato</option>
+                        <option value="otros">Otros</option>
+                    </select>
+                </div>
+            </form>
+        </div>
+
+        <div class="modal-footer">
+            <button type="button" class="btn btn-cancel" onclick="cerrarModal('modalEditarEmpleo')">Cancelar</button>
+            <button type="submit" form="formEditarEmpleo" class="btn btn-save">Guardar</button>
+        </div>
+
+    </div>
+</div>

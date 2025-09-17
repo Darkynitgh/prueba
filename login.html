@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Intelimática</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="/css/estilos.css">
+
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-dark custom-navbar fixed-top">
+        <div class="container-fluid d-flex justify-content-between align-items-center">
+            <!-- Logo con imagen -->
+            <a class="navbar-brand d-flex align-items-center gap-2" href="#">
+                <img src="/img/logo.png" alt="Logo" class="navbar-logo">
+            </a>
+
+            <!-- Texto Innovasi -->
+            <span class="navbar-text innovasi-text">Innovasi</span>
+        </div>
+    </nav>
+
+
+
+    <div class="login-container">
+        <div class="row align-items-center justify-content-center">
+
+            <!-- Formulario (en móviles arriba) -->
+            <div class="col-12 col-md-5 order-1 order-md-2">
+                <div class="form-section">
+                    <h2>Inicio de Sesión</h2>
+                    <form id="loginForm">
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Usuario</label>
+                            <input type="email" id="email" class="form-control" placeholder="Intelimática"
+                                required>
+                        </div>
+
+                        <div class="d-flex justify-content-between align-items-center mb-1">
+                            <label for="password" class="form-label mb-0">Contraseña</label>
+                        </div>
+                        <div class="mb-3 password-wrapper">
+                            <input type="password" id="password" class="form-control" placeholder="••••••••" required>
+                            <button type="button" class="toggle-password" id="togglePwd"><i
+                                    class="bi bi-eye"></i></button>
+                        </div>
+
+                        <div class="mb-3">
+                            <a href="#" class="small-muted">¿Olvidaste tu contraseña?</a>
+                        </div>
+
+                        <!-- Captcha Estático estilo Google -->
+                        <div class="captcha-mockup mb-3 d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center gap-2">
+                                <input type="checkbox" id="fakeCaptcha" class="captcha-checkbox">
+                                <label for="fakeCaptcha" class="mb-0 captcha-label">No soy un robot</label>
+                            </div>
+                            <div class="captcha-logo">
+                                <span class="captcha-brand">reCAPTCHA</span>
+                                <small class="captcha-terms d-block">Privacidad · Condiciones</small>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-custom w-100" onclick="event.preventDefault(); window.location.href='/usuario/inicio.html';">Ingresar</button>
+                        <p class="text-center small-muted mt-3">¿No tienes cuenta? <a href="/registro.html">Registrate</a></p>
+                        <p class="text-center small-muted mt-2">¿Eres empleado candidato? <a href="/usuario/login_candidato.html">Ingresa aquí</a></p>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Texto (en móviles abajo) -->
+            <div class="col-12 col-md-7 order-2 order-md-1">
+                <div class="left-panel">
+                    <div class="brand">
+                        <div class="logo">TP</div>
+                        <div>
+                            <div style="font-weight:700; font-size:1.05rem; color:#fff;">Titulo prinicpal</div>
+                        </div>
+                    </div>
+                    <div class="feature">
+                        <i class="bi bi-gear-fill icon"></i>
+                        <div>
+                            <h5>Subtitulo 1</h5>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum odit qui accusantium,
+                                architecto
+                                alias praesentium totam,
+                                doloribus corporis culpa inventore cumque dolorum vitae voluptatibus quia.</p>
+                        </div>
+                    </div>
+                    <div class="feature">
+                        <i class="bi bi-tools icon"></i>
+                        <div>
+                            <h5>Subtitulo 2</h5>
+                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Suscipit nemo architecto
+                                consequuntur exercitationem
+                                commodi, ratione assumenda fuga
+                                repellendus asperiores.</p>
+                        </div>
+                    </div>
+                    <div class="feature">
+                        <i class="bi bi-hand-thumbs-up-fill icon"></i>
+                        <div>
+                            <h5>subtitulo 3</h5>
+                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ullam sequi fugiat aliquam amet
+                                mollitia vitae,
+                                non molestias quis. Libero voluptatum ipsa, dolor modi quidem sunt consectetur.</p>
+                        </div>
+                    </div>
+                    <div class="feature">
+                        <i class="bi bi-magic icon"></i>
+                        <div>
+                            <h5>Subtitulo 4</h5>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero tenetur rem velit.
+                                Consequatur, amet?</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    
+    <script src="/js/main.js"></script>
+</body>
+
+</html>
